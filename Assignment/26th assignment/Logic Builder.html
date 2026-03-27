@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #0078ff;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005fcc;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Interactive Form</h2>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <p class="error" id="nameError"></p>
+
+    <input type="email" id="email" placeholder="Enter your email">
+    <p class="error" id="emailError"></p>
+
+    <input type="password" id="password" placeholder="Create a password">
+    <p class="error" id="passwordError"></p>
+
+    <button onclick="validateForm()">Submit</button>
+
+    <p class="success" id="successMessage"></p>
+</div>
+
+
+
+<script>
+function validateForm() {
+    // Getting values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    // Error display areas
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+    let successMessage = document.getElementById("successMessage");
+
+    // Reset previous messages
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    passwordError.innerHTML = "";
+    successMessage.innerHTML = "";
+
+    let isValid = true;
+
+    // ✅ Name validation
+    if (name === "") {
+        nameError.innerHTML = "Name cannot be empty.";
+        isValid = false;
+    }
+
+    // ✅ Email validation
+    if (email === "") {
+        emailError.innerHTML = "Email cannot be empty.";
+        isValid = false;
+    } else if (!email.includes("@") || !email.includes(".")) {
+        emailError.innerHTML = "Enter a valid email address.";
+        isValid = false;
+    }
+
+    // ✅ Password validation
+    if (password.length < 6) {
+        passwordError.innerHTML = "Password must be at least 6 characters.";
+        isValid = false;
+    }
+
+    // ✅ If everything is valid
+    if (isValid) {
+        successMessage.innerHTML = "✅ Form submitted successfully!";
+    }
+}
+</script>
+
+</body>
+</html>
+``

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Hero Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans 100vh;            font-family: Arial, sans-serif;
+
+            /* ✅ Background Image */
+            background-image: url("bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* Background overlay for readability */
+            position: relative;
+        }
+
+        /* ✅ Dark overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            align-items: center;
+            z-index: 2;
+            max-width: 1000px;
+            width: 100%;
+            color: white;
+        }
+
+        .text {
+            flex: 1;
+        }
+
+        .text h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .text button {
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            background: #0078ff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .image {
+            flex: 1;
+        }
+
+        .image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.4);
+        }
+
+        /* ✅ Mobile Responsive Layout */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text h1 {
+                font-size: 36px;
+            }
+
+            .image img {
+                max-width: 250px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <!-- Text -->
+            <div class="text">
+                <h1>Welcome to My Website</h1>
+                <p>This hero section is fully responsive using Flexbox and includes a background image that adapts beautifully to all screen sizes.</p>
+                <button>Get Started</button>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="image">
+                <img src="hero.png" alt="Hero Illustration">
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;

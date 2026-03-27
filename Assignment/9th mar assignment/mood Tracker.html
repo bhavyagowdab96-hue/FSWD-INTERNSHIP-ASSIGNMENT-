@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mood Tracker</    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Mood Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .mood-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .mood {
+            font-size: 32px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .mood:hover {
+            background: #eee;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .history {
+            margin-top: 20px;
+        }
+
+        .entry {
+            background: #f9f9f9;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 6px;
+            font-size: 15px;
+            border-left: 4px solid #0078ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Mood Tracker</h2>
+
+    <p>Select your mood:</p>
+
+    <div class="mood-options">
+        <div class="mood" onclick="saveMood('😊')">😊</div>
+        <div class="mood" onclick="saveMood('😐')">😐</div>
+        <div class="mood" onclick="saveMood('😢')">😢</div>
+        <div class="mood" onclick="saveMood('😡')">😡</div>
+    </div>
+
+    <p class="success" id="message"></p>
+
+    <div class="history">
+        <h3>Mood History</h3>
+        <div id="historyList"></div>
+    </div>
+</div>
+
+
+<script>
+    function saveMood(mood) {
+        let message = document.getElementById("message");
+        let historyList = document.getElementById("historyList");
+
+        // Current date and time
+        let now = new Date();
+        let timestamp = now.toLocaleString();
+
+        // Create entry
+        let entry = document.createElement("div");
+        entry.className = "entry";
+        entry.textContent = timestamp + " — Mood: " + mood;
+
+        // Add to top
+        historyList.prepend(entry);
+
+        // Show success message
+        message.textContent = "✅ Mood saved!";
+        setTimeout(() => {
+            message.textContent = "";
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>

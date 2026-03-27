@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Sidebar Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="section">
+            <a href="#"><span>🏠</span> Home</a>
+            <a href="#"><span>🎬</span> Shorts</a>
+            <a href="#"><span>📺</span> Subscriptions</a>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <a href="#"><span>📚</span> Library</a>
+            <a href="#"><span>⏳</span> History</a>
+            <a href="#"><span>👍</span> Liked Videos</a>
+            <a href="#"><span>🕒</span> Watch Later</a>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h4>Explore</h4>
+            <a href="#"><span>🔥</span> Trending</a>
+            <a href="#"><span>🎵</span> Music</a>
+            <a href="#"><span>🎮</span> Gaming</a>
+            <a href="#"><span>📰</span> News</a>
+        </div>
+
+    </aside>
+
+</body>
+</html>
+``

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client-Server Architecture</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .diagram {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .box {
+            width: 150px;
+            height: 100px;
+            background: #e3e3e3;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .client {
+            margin-right: 120px;
+        }
+
+        .server {
+            margin-left: 120px;
+        }
+
+        /* ✅ Moving Request Animation */
+        .request {
+            position: absolute;
+            top: 20px;
+            font-weight: bold;
+            animation: moveRight 3s linear infinite;
+        }
+
+        /* ✅ Moving Response Animation */
+        .response {
+            position: absolute;
+            bottom: 20px;
+            font-weight: bold;
+            animation: moveLeft 3s linear infinite;
+        }
+
+        /* Animation definitions */
+        @keyframes moveRight {
+            0% { left: 120px; opacity: 0; }
+            50% { left: 350px; opacity: 1; }
+            100% { left: 580px; opacity: 0; }
+        }
+
+        @keyframes moveLeft {
+            0% { left: 580px; opacity: 0; }
+            50% { left: 350px; opacity: 1; }
+            100% { left: 120px; opacity: 0; }
+        }
+
+        ul, ol {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Assignment 1 - Internet Explorer</h1>
+
+    <div class="container">
+        <h2>Client-Server Architecture</h2>
+
+        <div class="diagram">
+            <div class="box client">CLIENT</div>
+
+            <!-- ✅ Moving Text -->
+            <div class="request">Request →</div>
+            <div class="response">← Response</div>
+
+            <div class="box server">SERVER</div>
+        </div>
+
+        <ul>
+            <li>Client sends a request.</li>
+            <li>Server processes the request.</li>
+            <li>Server sends the response.</li>
+            <li>Client displays the webpage.</li>
+        </ul>
+    </div>
+
+    <!-- ✅ Added Detailed Process Section -->
+    <div class="container">
+        <h2>What Happens When You Open a Website?</h2>
+
+        <ol>
+            <li><b>Enter URL:</b> User types a website link in the browser.</li>
+            <li><b>DNS Lookup:</b> URL is converted into an IP address.</li>
+            <li><b>TCP Handshake:</b> Browser creates a connection with the server.</li>
+            <li><b>HTTPS Handshake:</b> A secure encrypted channel is established.</li>
+            <li><b>HTTP Request:</b> Browser sends a GET request to server.</li>
+            <li><b>Server Processing:</b> Server retrieves webpage files or database data.</li>
+            <li><b>HTTP Response:</b> Server sends HTML, CSS, JS, images, etc.</li>
+            <li><b>Rendering:</b> Browser builds DOM and displays the webpage.</li>
+            <li><b>Additional Requests:</b> Browser loads images, CSS, scripts, icons.</li>
+        </ol>
+    </div>
+
+</body>
+</html>
